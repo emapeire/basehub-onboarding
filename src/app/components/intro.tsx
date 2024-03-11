@@ -6,14 +6,14 @@ export function Intro() {
         A statically generated blog example using{' '}
         <a
           href='https://nextjs.org/'
-          className='underline hover:text-success duration-200 transition-colors'
+          className='underline hover:text-blue-600 duration-200 transition-colors'
         >
           Next.js
         </a>{' '}
         and{' '}
         <a
           href='https://basehub.com/'
-          className='underline hover:text-success duration-200 transition-colors'
+          className='underline hover:text-blue-600 duration-200 transition-colors'
         >
           BaseHub
         </a>

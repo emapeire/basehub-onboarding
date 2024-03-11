@@ -6,6 +6,8 @@ export function Intro() {
         A statically generated blog example using{' '}
         <a
           href='https://nextjs.org/'
+          target='_blank'
+          rel='noopener noreferrer'
           className='underline hover:text-blue-600 duration-200 transition-colors'
         >
           Next.js
@@ -13,6 +15,8 @@ export function Intro() {
         and{' '}
         <a
           href='https://basehub.com/'
+          target='_blank'
+          rel='noopener noreferrer'
           className='underline hover:text-blue-600 duration-200 transition-colors'
         >
           BaseHub

@@ -48,7 +48,7 @@ export default async function PostPage({
           url={post.coverImage.url}
           slug={post._slug}
         />
-        <div className='max-w-2xl mx-auto text-lg leading-relaxed mt-12 mb-28 text-pretty'>
+        <div className='max-w-2xl mx-auto text-lg leading-relaxed text-pretty mt-16 md:mt-12'>
           <RichText>{post.body.json.content}</RichText>
         </div>
       </article>

@@ -31,23 +31,27 @@ export default async function PostPage({
         </Link>
         .
       </h2>
+
       <article className="mb-28">
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-5">
           {post._title}
         </h1>
-        <div className="mb-5">
+
+        <div className="mb-4">
           {post.author && (
             <Avatar title={post.author._title} avatar={post.author.avatar} />
           )}
-          <div className="text-gray-500">
+          <div className="mt-4">
             <DateFormatter date={post.date} />
           </div>
         </div>
+
         <CoverImage
           title={post._title}
           url={post.coverImage.url}
           slug={post._slug}
         />
+
         <div className="max-w-2xl mx-auto text-lg leading-relaxed text-pretty mt-16 md:mt-12">
           <RichText>{post.body.json.content}</RichText>
         </div>

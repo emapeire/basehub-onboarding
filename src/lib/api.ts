@@ -1,6 +1,7 @@
 import { basehub, PostsItemGenqlSelection } from 'basehub'
+import { revalidate } from '@/constants'
 
-const POST_FRAGMENT = {
+export const POST_FRAGMENT = {
   _id: true,
   _slug: true,
   _title: true,
@@ -46,7 +47,7 @@ export async function getPreviewPostBySlug(slug: string | null) {
 export async function getAllPosts(isDraftMode: boolean) {
   const query = await basehub({
     draft: isDraftMode,
-    next: { revalidate: 30 }
+    next: { revalidate: revalidate }
   }).query({
     blog: {
       posts: {
@@ -61,7 +62,7 @@ export async function getAllPosts(isDraftMode: boolean) {
 export async function getPostAndMorePosts(slug: string, preview: boolean) {
   const postQuery = await basehub({
     draft: preview,
-    next: { revalidate: 30 }
+    next: { revalidate: revalidate }
   }).query({
     blog: {
       posts: {
@@ -80,7 +81,7 @@ export async function getPostAndMorePosts(slug: string, preview: boolean) {
 
   const morePostsQuery = await basehub({
     draft: preview,
-    next: { revalidate: 30 }
+    next: { revalidate: revalidate }
   }).query({
     blog: {
       posts: {

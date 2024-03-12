@@ -3,7 +3,6 @@ import { RichText } from 'basehub/react-rich-text'
 import { Avatar } from './avatar'
 import { DateFormatter } from './date'
 import { CoverImage } from './cover-image'
-import { MorePosts } from './more-posts'
 
 export function Post({ post }: { post: any }) {
   return (
@@ -36,7 +35,15 @@ export function Post({ post }: { post: any }) {
         />
 
         <div className="max-w-2xl mx-auto text-lg leading-relaxed text-pretty mt-16 md:mt-12">
-          <RichText>{post.body.json.content}</RichText>
+          <RichText
+            components={{
+              p(props) {
+                return <p className="mb-4" {...props} />
+              }
+            }}
+          >
+            {post.body.json.content}
+          </RichText>
         </div>
       </article>
     </section>

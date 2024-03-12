@@ -11,7 +11,7 @@ export default async function HomePage() {
   const morePosts = allPosts.slice(1)
 
   return (
-    <main className='container mx-auto px-5'>
+    <main className="container mx-auto px-5">
       <Intro />
       {heroPost && (
         <HeroPost

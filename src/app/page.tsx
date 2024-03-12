@@ -4,7 +4,7 @@ import { Intro } from './components/intro'
 import { HeroPost } from './components/hero-post'
 import { MorePosts } from './components/more-posts'
 
-export default async function Page() {
+export default async function HomePage() {
   const { isEnabled } = draftMode()
   const allPosts = await getAllPosts(isEnabled)
   const heroPost = allPosts[0]

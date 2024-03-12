@@ -1,4 +1,4 @@
-export function DateString({ date }: { date: string }) {
+export function DateFormatter({ date }: { date: string }) {
   const newDate = new Date(date)
   const isoString = newDate.toISOString()
   const isoDate = isoString.substring(0, 10)

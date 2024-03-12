@@ -1,16 +1,16 @@
 import Image from 'next/image'
 
-export const Avatar = ({ name, picture }: { name: string; picture: any }) => {
+export const Avatar = ({ title, avatar }: { title: string; avatar: any }) => {
   return (
     <div className='flex items-center'>
       <Image
-        src={picture.url}
+        src={avatar.url}
         className='w-12 h-12 rounded-full mr-4'
-        alt={name}
+        alt={title}
         width={48}
         height={48}
       />
-      <div className='text-xl font-bold'>{name}</div>
+      <div className='text-xl font-bold'>{title}</div>
     </div>
   )
 }

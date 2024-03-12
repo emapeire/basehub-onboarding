@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { CoverImage } from './cover-image'
-import { DateString } from './date'
+import { DateFormatter } from './date'
 import { Avatar } from './avatar'
 
 export function HeroPost({
@@ -31,12 +31,12 @@ export function HeroPost({
             </Link>
           </h3>
           <div className='mb-4 md:mb-0 text-lg'>
-            <DateString date={date} />
+            <DateFormatter date={date} />
           </div>
         </div>
         <div>
           <p className='text-lg leading-relaxed mb-4'>{excerpt}</p>
-          {author && <Avatar name={author._title} picture={author.avatar} />}
+          {author && <Avatar title={author._title} avatar={author.avatar} />}
         </div>
       </div>
     </section>

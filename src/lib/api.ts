@@ -11,7 +11,9 @@ const POST_FRAGMENT = {
     }
   },
   body: {
-    json: { content: true }
+    json: {
+      content: true
+    }
   },
   coverImage: {
     url: true,

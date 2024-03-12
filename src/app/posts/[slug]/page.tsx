@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Pump } from 'basehub/react-pump'
 import { RichText } from 'basehub/react-rich-text'
 import { draftMode } from 'next/headers'
 import { Avatar } from '@/app/components/avatar'

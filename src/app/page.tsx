@@ -1,8 +1,8 @@
 import { draftMode } from 'next/headers'
 import { getAllPosts } from '@/lib/api'
-import { Intro } from './components/intro'
-import { HeroPost } from './components/hero-post'
-import { MorePosts } from './components/more-posts'
+import { Intro } from '@/components/intro'
+import { HeroPost } from '@/components/hero-post'
+import { MorePosts } from '@/components/more-posts'
 
 export default async function HomePage() {
   const { isEnabled } = draftMode()

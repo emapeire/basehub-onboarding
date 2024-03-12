@@ -34,7 +34,7 @@ export function Post({ post }: { post: any }) {
           slug={post._slug}
         />
 
-        <div className="max-w-2xl mx-auto text-lg leading-relaxed text-pretty mt-16 md:mt-12">
+        <div className="max-w-4xl mx-auto text-lg leading-relaxed text-pretty mt-16 md:mt-12">
           <RichText
             components={{
               p(props) {

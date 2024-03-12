@@ -1,4 +1,4 @@
-import { basehub, PostsItemGenqlSelection } from 'basehub'
+import { basehub, PostsItemGenqlSelection, QueryGenqlSelection } from 'basehub'
 import { revalidate } from '@/constants'
 
 export const POST_FRAGMENT = {
@@ -103,4 +103,15 @@ export async function getPostAndMorePosts(slug: string, preview: boolean) {
     post: postQuery.blog.posts.items[0],
     morePosts: morePostsQuery.blog.posts.items
   }
+}
+
+export function postBySlugQuery(slug: string) {
+  return {
+    blog: {
+      posts: {
+        __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
+        items: POST_FRAGMENT
+      }
+    }
+  } satisfies QueryGenqlSelection
 }

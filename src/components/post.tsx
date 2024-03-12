@@ -5,9 +5,9 @@ import { DateFormatter } from './date'
 import { CoverImage } from './cover-image'
 import { MorePosts } from './more-posts'
 
-export function Post({ post, morePosts }: { post: any; morePosts: any[] }) {
+export function Post({ post }: { post: any }) {
   return (
-    <main className="container mx-auto px-5 mt-16 mb-16 md:mb-12">
+    <section className="mb-16 md:mb-12">
       <h2 className="text-2xl md:text-4xl font-bold tracking-tighter leading-tight md:pr-8">
         <Link href={'/'} className="hover:underline">
           Blog
@@ -39,7 +39,6 @@ export function Post({ post, morePosts }: { post: any; morePosts: any[] }) {
           <RichText>{post.body.json.content}</RichText>
         </div>
       </article>
-      {morePosts.length > 0 && <MorePosts posts={morePosts} />}
-    </main>
+    </section>
   )
 }

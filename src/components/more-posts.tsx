@@ -1,5 +1,6 @@
 import Link from 'next/link'
 
+// TODO: Complete styles for this component
 export function MorePosts({ posts }: { posts: any[] }) {
   return (
     <section>

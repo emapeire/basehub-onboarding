@@ -1,16 +1,9 @@
-export function DateFormatter({ date }: { date: string }) {
-  const newDate = new Date(date)
-  const isoString = newDate.toISOString()
-  const isoDate = isoString.substring(0, 10)
-  const displayDate = new Date(isoDate)
+import { format } from 'date-fns'
+
+export default function DateComponent({ dateString }: { dateString: string }) {
   return (
-    <time dateTime={isoDate}>
-      {displayDate.toLocaleDateString('en-US', {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-        timeZone: 'UTC'
-      })}
+    <time dateTime={dateString}>
+      {format(new Date(dateString), 'LLLL	d, yyyy')}
     </time>
   )
 }

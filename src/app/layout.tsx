@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Footer } from '@/components/footer'
+import { Footer } from '@/components/ui/footer'
+import { CMS_NAME } from '@/lib/constants'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'BaseHub Onboarding App',
-  description: 'Example onboarding app for BaseHub'
+  title: `Next.js and ${CMS_NAME} Example`,
+  description: `This is a blog built with Next.js and ${CMS_NAME}.`
 }
 
 export default function RootLayout({
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-        <Footer />
+        <section className="min-h-screen">
+          {children}
+          <Footer />
+        </section>
       </body>
     </html>
   )

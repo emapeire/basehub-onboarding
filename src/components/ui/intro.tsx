@@ -1,3 +1,5 @@
+import { CMS_NAME, CMS_URL } from '@/lib/constants'
+
 export function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
@@ -10,18 +12,18 @@ export function Intro() {
           href="https://nextjs.org/"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-blue-600 duration-200 transition-colors"
+          className="underline hover:text-orange-500 duration-200 transition-colors"
         >
           Next.js
         </a>{' '}
         and{' '}
         <a
-          href="https://basehub.com/"
+          href={CMS_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline hover:text-blue-600 duration-200 transition-colors"
+          className="underline hover:text-orange-500 duration-200 transition-colors"
         >
-          BaseHub
+          {CMS_NAME}
         </a>
         .
       </h2>

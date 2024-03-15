@@ -1,9 +1,9 @@
-import { draftMode } from 'next/headers'
-import { Pump } from 'basehub/react-pump'
-import { Intro } from '@/components/ui/intro'
-import { HeroPost } from '@/components/ui/hero-post'
-import { MoreStories } from '@/components/ui/more-stories'
-import { allPostsQuery } from '@/lib/queries'
+import { draftMode } from "next/headers";
+import { Pump } from "basehub/react-pump";
+import { Intro } from "@/components/ui/intro";
+import { HeroPost } from "@/components/ui/hero-post";
+import { MoreStories } from "@/components/ui/more-stories";
+import { allPostsQuery } from "@/lib/queries";
 
 export default async function Page() {
   return (
@@ -13,10 +13,10 @@ export default async function Page() {
       queries={[allPostsQuery()]}
     >
       {async ([{ blog }]) => {
-        'use server'
+        "use server";
 
-        const heroPost = blog.posts.items[0]
-        const morePosts = blog.posts.items.slice(1)
+        const heroPost = blog.posts.items[0];
+        const morePosts = blog.posts.items.slice(1);
 
         return (
           <main className="container mx-auto px-5">
@@ -33,8 +33,8 @@ export default async function Page() {
             )}
             <MoreStories morePosts={morePosts} />
           </main>
-        )
+        );
       }}
     </Pump>
-  )
+  );
 }

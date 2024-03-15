@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Avatar from './avatar'
-import Date from '../date'
-import CoverImage from './cover-image'
+import Link from "next/link";
+import Avatar from "./avatar";
+import Date from "../date";
+import CoverImage from "./cover-image";
 
 export function PostPreview({
   title,
@@ -9,14 +9,14 @@ export function PostPreview({
   date,
   excerpt,
   author,
-  slug
+  slug,
 }: {
-  title: string
-  coverImage: any
-  date: string
-  excerpt: string
-  author: any
-  slug: string
+  title: string;
+  coverImage: any;
+  date: string;
+  excerpt: string;
+  author: any;
+  slug: string;
 }) {
   return (
     <div>
@@ -34,5 +34,5 @@ export function PostPreview({
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       {author && <Avatar title={author._title} url={author.avatar.url} />}
     </div>
-  )
+  );
 }

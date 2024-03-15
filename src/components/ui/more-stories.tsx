@@ -1,4 +1,4 @@
-import { PostPreview } from './post-preview'
+import { PostPreview } from "./post-preview";
 
 export function MoreStories({ morePosts }: { morePosts: any[] }) {
   return (
@@ -20,5 +20,5 @@ export function MoreStories({ morePosts }: { morePosts: any[] }) {
         ))}
       </div>
     </section>
-  )
+  );
 }

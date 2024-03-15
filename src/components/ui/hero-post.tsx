@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Date from '../date'
-import CoverImage from './cover-image'
-import Avatar from './avatar'
+import Link from "next/link";
+import Date from "../date";
+import CoverImage from "./cover-image";
+import Avatar from "./avatar";
 
 export function HeroPost({
   title,
@@ -9,14 +9,14 @@ export function HeroPost({
   date,
   excerpt,
   author,
-  slug
+  slug,
 }: {
-  title: string
-  coverImage: any
-  date: string
-  excerpt: string
-  author: any
-  slug: string
+  title: string;
+  coverImage: any;
+  date: string;
+  excerpt: string;
+  author: any;
+  slug: string;
 }) {
   return (
     <section>
@@ -40,5 +40,5 @@ export function HeroPost({
         </div>
       </div>
     </section>
-  )
+  );
 }

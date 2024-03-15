@@ -1,4 +1,4 @@
-import BaseHubImage from '../basehub-image'
+import BaseHubImage from "../basehub-image";
 
 export default function Avatar({ title, url }: { title: string; url: any }) {
   return (
@@ -14,5 +14,5 @@ export default function Avatar({ title, url }: { title: string; url: any }) {
       </div>
       <div className="text-xl font-bold">{title}</div>
     </div>
-  )
+  );
 }

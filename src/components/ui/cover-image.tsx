@@ -1,18 +1,18 @@
-import Link from 'next/link'
-import BaseHubImage from '../basehub-image'
+import Link from "next/link";
+import BaseHubImage from "../basehub-image";
 
 function cn(...classes: any[]) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function CoverImage({
   title,
   url,
-  slug
+  slug,
 }: {
-  title: string
-  url: string
-  slug?: string
+  title: string;
+  url: string;
+  slug?: string;
 }) {
   const image = (
     <BaseHubImage
@@ -20,12 +20,12 @@ export default function CoverImage({
       priority
       width={2000}
       height={1000}
-      className={cn('shadow-small', {
-        'hover:shadow-medium transition-shadow duration-200': slug
+      className={cn("shadow-small", {
+        "hover:shadow-medium transition-shadow duration-200": slug,
       })}
       src={url}
     />
-  )
+  );
 
   return (
     <div className="sm:mx-0">
@@ -37,5 +37,5 @@ export default function CoverImage({
         image
       )}
     </div>
-  )
+  );
 }

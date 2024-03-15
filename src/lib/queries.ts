@@ -1,4 +1,4 @@
-import { basehub, PostsItemGenqlSelection, QueryGenqlSelection } from 'basehub'
+import { basehub, PostsItemGenqlSelection, QueryGenqlSelection } from "basehub";
 
 export const POST_FRAGMENT = {
   _id: true,
@@ -8,32 +8,32 @@ export const POST_FRAGMENT = {
     _title: true,
     avatar: {
       url: true,
-      alt: true
-    }
+      alt: true,
+    },
   },
   body: {
     json: {
-      content: true
-    }
+      content: true,
+    },
   },
   coverImage: {
     url: true,
-    alt: true
+    alt: true,
   },
   date: true,
-  excerpt: true
-} satisfies PostsItemGenqlSelection
+  excerpt: true,
+} satisfies PostsItemGenqlSelection;
 
 export const postBySlugQuery = (slug: string) => {
   return {
     blog: {
       posts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
-        items: POST_FRAGMENT
-      }
-    }
-  } satisfies QueryGenqlSelection
-}
+        items: POST_FRAGMENT,
+      },
+    },
+  } satisfies QueryGenqlSelection;
+};
 
 export const allPostsQuery = () => {
   return {
@@ -41,13 +41,13 @@ export const allPostsQuery = () => {
       posts: {
         __args: {
           first: 3,
-          orderBy: 'date__DESC'
+          orderBy: "date__DESC",
         },
-        items: POST_FRAGMENT
-      }
-    }
-  } satisfies QueryGenqlSelection
-}
+        items: POST_FRAGMENT,
+      },
+    },
+  } satisfies QueryGenqlSelection;
+};
 
 export async function getMorePosts(
   slug: string,
@@ -55,25 +55,25 @@ export async function getMorePosts(
 ): Promise<any> {
   const query = await basehub({
     draft: preview,
-    next: { revalidate: 60 }
+    next: { revalidate: 60 },
   }).query({
     blog: {
       posts: {
         __args: {
           filter: {
             _sys_slug: {
-              notEq: slug
-            }
+              notEq: slug,
+            },
           },
           first: 2,
-          orderBy: 'date__DESC'
+          orderBy: "date__DESC",
         },
-        items: POST_FRAGMENT
-      }
-    }
-  })
+        items: POST_FRAGMENT,
+      },
+    },
+  });
 
-  return query.blog.posts.items
+  return query.blog.posts.items;
 }
 
 export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
@@ -83,76 +83,76 @@ export async function getPreviewPostBySlug(slug: string | null): Promise<any> {
         __args: {
           filter: {
             _sys_slug: {
-              eq: slug
-            }
+              eq: slug,
+            },
           },
-          first: 1
+          first: 1,
         },
-        items: POST_FRAGMENT
-      }
-    }
-  })
+        items: POST_FRAGMENT,
+      },
+    },
+  });
 
-  return query.blog.posts.items[0]
+  return query.blog.posts.items[0];
 }
 
 export async function getAllPosts(isDraftMode: boolean) {
   const query = await basehub({
     draft: isDraftMode,
-    next: { revalidate: 60 }
+    next: { revalidate: 60 },
   }).query({
     blog: {
       posts: {
-        items: POST_FRAGMENT
-      }
-    }
-  })
+        items: POST_FRAGMENT,
+      },
+    },
+  });
 
-  return query.blog.posts.items
+  return query.blog.posts.items;
 }
 
 export async function getPostAndMorePosts(slug: string, preview: boolean) {
   const postQuery = await basehub({
     draft: preview,
-    next: { revalidate: 60 }
+    next: { revalidate: 60 },
   }).query({
     blog: {
       posts: {
         __args: {
           filter: {
             _sys_slug: {
-              eq: slug
-            }
+              eq: slug,
+            },
           },
-          first: 1
+          first: 1,
         },
-        items: POST_FRAGMENT
-      }
-    }
-  })
+        items: POST_FRAGMENT,
+      },
+    },
+  });
 
   const morePostsQuery = await basehub({
     draft: preview,
-    next: { revalidate: 60 }
+    next: { revalidate: 60 },
   }).query({
     blog: {
       posts: {
         __args: {
           filter: {
             _sys_slug: {
-              notEq: slug
-            }
+              notEq: slug,
+            },
           },
           first: 2,
-          orderBy: 'date__DESC'
+          orderBy: "date__DESC",
         },
-        items: POST_FRAGMENT
-      }
-    }
-  })
+        items: POST_FRAGMENT,
+      },
+    },
+  });
 
   return {
     post: postQuery.blog.posts.items[0],
-    morePosts: morePostsQuery.blog.posts.items
-  }
+    morePosts: morePostsQuery.blog.posts.items,
+  };
 }

@@ -1,4 +1,4 @@
-import { EXAMPLE_PATH } from '@/lib/constants'
+import { EXAMPLE_PATH } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -29,5 +29,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

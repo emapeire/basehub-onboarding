@@ -1,7 +1,7 @@
-import { RichText } from 'basehub/react-rich-text'
-import Avatar from './avatar'
-import CoverImage from './cover-image'
-import Date from '../date'
+import { RichText } from "basehub/react-rich-text";
+import Avatar from "./avatar";
+import CoverImage from "./cover-image";
+import Date from "../date";
 
 export function Post({ post }: { post: any }) {
   return (
@@ -32,7 +32,7 @@ export function Post({ post }: { post: any }) {
         <RichText
           components={{
             p(props) {
-              return <p className="mb-6" {...props} />
+              return <p className="mb-6" {...props} />;
             },
             a(props) {
               return (
@@ -42,16 +42,16 @@ export function Post({ post }: { post: any }) {
                   rel="noopener noreferrer"
                   {...props}
                 />
-              )
+              );
             },
             ol(props) {
-              return <ol className="list-decimal ms-5" {...props} />
-            }
+              return <ol className="list-decimal ms-5" {...props} />;
+            },
           }}
         >
           {post.body.json.content}
         </RichText>
       </div>
     </article>
-  )
+  );
 }

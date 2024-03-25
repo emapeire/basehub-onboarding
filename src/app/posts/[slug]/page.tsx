@@ -4,8 +4,9 @@ import { draftMode } from "next/headers";
 import { notFound } from "next/navigation";
 import { basehub } from "basehub";
 import { Pump } from "basehub/react-pump";
-import { Post } from "@/components/ui/post";
-import { MoreStories } from "@/components/ui/more-stories";
+import DraftHeader from "@/components/draft-header";
+import { Post } from "@/components/post";
+import { MoreStories } from "@/components/more-stories";
 import { getMorePosts, postBySlugQuery } from "@/lib/queries";
 
 export async function generateStaticParams() {
@@ -66,7 +67,8 @@ export default async function PostPage({
 
         return (
           <main className="container mx-auto px-5">
-            <h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
+            <DraftHeader draft={draftMode().isEnabled} />
+            <h2 className="mt-16 mb-16 md:mb-12 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
               <Link href="/" className="hover:underline">
                 Blog
               </Link>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BaseHubImage from "../basehub-image";
+import BaseHubImage from "./basehub-image";
 
 function cn(...classes: any[]) {
   return classes.filter(Boolean).join(" ");

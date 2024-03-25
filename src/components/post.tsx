@@ -1,7 +1,7 @@
 import { RichText } from "basehub/react-rich-text";
 import CoverImage from "./cover-image";
 import Avatar from "./avatar";
-import Date from "../date";
+import Date from "./date";
 
 export function Post({ post }: { post: any }) {
   return (

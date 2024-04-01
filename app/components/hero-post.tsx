@@ -2,8 +2,9 @@ import Link from "next/link";
 import Date from "./date";
 import CoverImage from "./cover-image";
 import Avatar from "./avatar";
+import { Post } from "@/lib/queries";
 
-export function HeroPost({
+export default function HeroPost({
   title,
   coverImage,
   date,
@@ -12,10 +13,10 @@ export function HeroPost({
   slug,
 }: {
   title: string;
-  coverImage: any;
+  coverImage: Post["coverImage"];
   date: string;
   excerpt: string;
-  author: any;
+  author: Post["author"];
   slug: string;
 }) {
   return (
@@ -30,7 +31,7 @@ export function HeroPost({
               {title}
             </Link>
           </h3>
-          <div className="mb-4 md:mb-0 text-base">
+          <div className="mb-4 md:mb-0 text-base dark:text-white/60 text-black/60">
             <Date dateString={date} />
           </div>
         </div>
